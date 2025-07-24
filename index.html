@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Space Website</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Welcome to the Space World</h1>
+    <p>Explore the wonders of the universe</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+<main>
+  <section id="home" class="content-section active">
+    <h2>Home</h2>
+    <p>Welcome to our space-themed website. Here, we explore the beauty and mystery of the cosmos—from galaxies and stars to planets and black holes.</p>
+  </section>
+
+  <section id="about" class="content-section">
+    <h2>About</h2>
+    <p>This website is dedicated to space enthusiasts who love to learn about astronomy and space exploration.</p>
+  </section>
+
+  <section id="gallery" class="content-section">
+    <h2>Gallery</h2>
+    <p>Check out some stunning images of space:</p>
+    <div class="gallery">
+      <img src="image/space1.jpg" alt="Galaxy 1">
+      <img src="image/space2.jpg" alt="Galaxy 2">
+      <img src="image/space3.jpg" alt="Galaxy 3">
+    </div>
+  </section>
+
+  <section id="contact" class="content-section">
+    <h2>Contact</h2>
+    <p>Email us at: <a href="mailto:space@example.com" style="color: cyan;">space@example.com</a></p>
+  </section>
+</main>
+
+  
+  <footer>
+    <p>&copy; 2025 Space Explorers. All rights reserved.</p>
+  </footer>
+<script>
+  const links = document.querySelectorAll("nav a");
+  const sections = document.querySelectorAll(".content-section");
+
+  links.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default anchor behavior
+
+      // Remove 'active' from all sections
+      sections.forEach(section => section.classList.remove("active"));
+
+      // Get the section ID from the link's href (e.g. #about)
+      const target = this.getAttribute("href").substring(1);
+      document.getElementById(target).classList.add("active");
+    });
+  });
+</script>
+
+</body>
+</html>
